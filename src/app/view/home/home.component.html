@@ -1,0 +1,34 @@
+<div>
+    <h4>Nuevo Dashboard</h4>
+</div>
+<div>
+    <mat-grid-list cols="4" rowHeight="2:1">
+        <mat-grid-tile>
+            <button (click)="openDialog()" class="newDashButton" tyle="margin-left: 10px;">
+                    <img src="assets/img/addIcon.png" >
+            </button>
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<div>
+    <h4>Mis dashboards</h4>
+</div>
+<div>
+    <mat-grid-list cols="4" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let dashboard of dashboardlist">
+            <div>
+                {{dashboard.name}}
+            </div>
+            <div>
+                <button (click)="dashboardRoute(dashboard)" class="btn btn-info" style="margin-left: 10px;">Ver</button>
+            </div>
+            <div>
+                <button (click)="openUpdateDialog(dashboard)" class="btn btn-info" style="margin-left: 10px;">Actualizar</button>
+            </div>
+            <div>
+                <button (click)="openDeletionDialog(dashboard)" class="btn btn-info" style="margin-left: 10px;">Eliminar</button>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

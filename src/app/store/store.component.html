@@ -1,0 +1,31 @@
+<div>
+    <h4>Nuevo Producto</h4>
+</div>
+<div>
+    <mat-grid-list cols="4" rowHeight="2:1">
+        <mat-grid-tile>
+            <button (click)="dashboardRoute()" class="newDashButton" tyle="margin-left: 10px;">
+                  <img src="assets/img/addIcon.png" >
+          </button>
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<div>
+    <h4>Mis Productos</h4>
+</div>
+<div>
+    <mat-grid-list cols="4" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let product of product">
+            <div>
+                {{product.name}}
+            </div>
+            <div>
+                <button (click)="editRoute(product)" class="btn btn-info" style="margin-left: 10px;">Editar</button>
+            </div>
+            <div>
+                <button (click)="deleteRoute(product)" class="btn btn-info" style="margin-left: 10px;">Eliminar</button>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
